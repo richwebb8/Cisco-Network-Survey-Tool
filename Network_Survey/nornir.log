@@ -1,0 +1,109 @@
+2020-09-11 12:41:53,231 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 2 hosts
+2020-09-11 12:41:56,315 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.0.0.1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/napalm/base/base.py", line 86, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.0.0.1:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/nornir/core/inventory.py", line 297, in get_connection
+    self.open_connection(
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/nornir/core/inventory.py", line 358, in open_connection
+    conn_obj.open(
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/nornir/plugins/connections/napalm.py", line 51, in open
+    connection.open()
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/napalm/ios/ios.py", line 169, in open
+    self.device = self._netmiko_open(
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/napalm/base/base.py", line 95, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.0.0.1
+
+2020-09-11 12:41:56,317 - nornir.core.task -    ERROR -      start() - Host 'host2.cmh': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.0.0.3
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/napalm/base/base.py", line 86, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.0.0.3:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/nornir/core/inventory.py", line 297, in get_connection
+    self.open_connection(
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/nornir/core/inventory.py", line 358, in open_connection
+    conn_obj.open(
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/nornir/plugins/connections/napalm.py", line 51, in open
+    connection.open()
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/napalm/ios/ios.py", line 169, in open
+    self.device = self._netmiko_open(
+  File "/home/user/Documents/Nornir_Projects/Network_Survey/env/lib/python3.8/site-packages/napalm/base/base.py", line 95, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.0.0.3
+
+2020-09-11 12:41:56,327 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_config']} on 2 hosts
+2020-09-11 12:41:56,327 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_mac_address_table']} on 2 hosts

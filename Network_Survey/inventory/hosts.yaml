@@ -1,0 +1,30 @@
+---
+host1.cmh:
+  hostname: '10.0.0.1'
+  port: 22
+  username: 'user'
+  password: 'Password'
+  platform: 'ios'
+  connection_options:
+    napalm:
+      extras:
+        optional_args:
+          secret: 'Password'
+          global_delay_factor: 2
+  groups:
+    - cisco
+
+host2.cmh:
+  hostname: '10.0.0.3'
+  port: 22
+  username: 'user'
+  password: 'Password'
+  platform: 'ios'
+  connection_options:
+    napalm:
+      extras:
+        optional_args:
+          secret: 'Password'
+          global_delay_factor: 2
+  groups:
+    - cisco

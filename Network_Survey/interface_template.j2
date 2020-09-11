@@ -1,0 +1,9 @@
+interface {{ interface }}
+ description {{ description }}
+ switchport access vlan {{ access_vlan }}
+ switchport mode {{ mode }}
+ switchport trunk native vlan {{ native_vlan }}
+ switchport trunk allowed vlan {{ trunk_vlans }}
+ switchport trunk allowed vlan add {{ trunk_vlans }}
+ switchport voice vlan {{ voice_vlan }}
+ ip address {{ ip_address }} {{ subnet }}
