@@ -17,6 +17,7 @@
 - Utilises [openpyxl](https://openpyxl.readthedocs.io/en/latest/) to create and add data to a .xlsx file
 ## How to Use
 - Edit the /inventory/hosts.yaml file to include login credentials for all required Cisco switches
+- pip install requirements.txt file
 - Execute the survey.py file
 ## Output
 - For the example GNS3 topology:
