@@ -15,6 +15,9 @@
 - Utilises [NAPALM](https://napalm.readthedocs.io/en/latest/) functions to return dictionaries containing show command information
 - Utilises [ttp](https://ttp.readthedocs.io/en/latest/) to parse 'show run' output against a Jinja2 template
 - Utilises [openpyxl](https://openpyxl.readthedocs.io/en/latest/) to create and add data to a .xlsx file
+## How to Use
+- Edit the /inventory/hosts.yaml file to include login credentials for all required Cisco switches
+- Execute the survey.py file
 ## Output
 - For the example GNS3 topology:
 ![Topology](https://user-images.githubusercontent.com/38755612/93078869-20d1f200-f683-11ea-90cf-d9e89a0e8299.PNG)
